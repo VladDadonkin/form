@@ -1,0 +1,40 @@
+.btn {
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 6px;
+
+    height: 30px;
+
+}
+
+.popover {
+    position: absolute;
+    width: 250px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    
+    padding: 10px;
+  }
+  
+  .popover::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+  }
+  
+  .popover-header {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .hidden {
+    display: none;
+  }
