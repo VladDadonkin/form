@@ -1,9 +1,17 @@
+body {
+    margin: 0;
+}
+
+.form {
+    display: flex;
+}
+
 .btn {
     color: #fff;
     background-color: red;
     border: none;
     border-radius: 6px;
-
+    margin-top: 200px;
     height: 30px;
 
 }
@@ -15,7 +23,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    
+    z-index: 999;
     padding: 10px;
   }
   
@@ -27,7 +35,7 @@
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: white transparent transparent transparent;
+    border-color: white;
   }
   
   .popover-header {
