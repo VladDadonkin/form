@@ -1,17 +1,21 @@
-
-const btn = document.querySelector('.btn');
+export function setupPopover() {
+    const btn = document.querySelector('.btn');
 const popover = document.querySelector('.popover');
 
 btn.addEventListener('click', (e) => {
     e.preventDefault();
     if (popover.classList.contains('hidden')) {
-        const { right, top } = btn.getBoundingClientRect();
-        btn.style.left = right + 5 + 'px';
-        btn.style.top = top + btn.offsetHeight / 2 - btn.offsetHeight / 2 + 'px';
+        
+        const rect = btn.getBoundingClientRect();
+
+        popover.style.top = rect.top - popover.offsetHeight - 85 + window.scrollY + 'px';
+        popover.style.left = rect.left + rect.width / 2 - popover.offsetWidht / 2 + 'px';
+
 
 
         popover.classList.remove('hidden')
-        console.log(right, top);
+        console.log(rect);
+        console.log(popover.getBoundingClientRect())
     }
     else {
         popover.classList.add('hidden')
@@ -20,4 +24,6 @@ btn.addEventListener('click', (e) => {
     
     console.log('submit');
 })
+};
+
 

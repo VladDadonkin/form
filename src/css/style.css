@@ -1,19 +1,22 @@
 body {
     margin: 0;
+    display: flex;
+    justify-content: center;
+   
+    height: 500px;
+
 }
 
-.form {
-    display: flex;
-}
+
 
 .btn {
     color: #fff;
     background-color: red;
     border: none;
     border-radius: 6px;
-    margin-top: 200px;
+    
     height: 30px;
-
+    align-self: center;
 }
 
 .popover {
@@ -27,17 +30,7 @@ body {
     padding: 10px;
   }
   
-  .popover::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: white;
-  }
-  
+
   .popover-header {
     font-weight: bold;
     margin-bottom: 5px;
