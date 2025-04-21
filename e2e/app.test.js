@@ -1,6 +1,6 @@
-import puppeteer from 'puppeteer';
+import puppeteer from "puppeteer";
 
-describe('Page start', () => {
+describe("Page start", () => {
   let browser;
   let page;
 
@@ -14,33 +14,34 @@ describe('Page start', () => {
     page = await browser.newPage();
   });
 
-  test('btn render on page', async () => {
-    await page.goto('http://localhost:8080');
+  test("btn render on page", async () => {
+    await page.goto("http://localhost:8080");
 
-    await page.waitForSelector('.btn');
-    const submit = await page.$('.btn');
+    await page.waitForSelector(".btn");
+    const submit = await page.$(".btn");
 
     await submit.click();
 
-    await page.waitForSelector('.popover')
+    await page.waitForSelector(".popover");
 
-    const isHidden = await page.$eval('.popover', el => el.classList.contains('hidden'));
+    const isHidden = await page.$eval(".popover", (el) =>
+      el.classList.contains("hidden"),
+    );
     expect(isHidden).toBe(false);
 
     await submit.click();
 
-    await new Promise(resolve => setTimeout(resolve, 300));
+    await new Promise((resolve) => setTimeout(resolve, 300));
 
-    await page.waitForSelector('.popover')
+    await page.waitForSelector(".popover");
 
-    isHidden = await page.$eval('.popover', el => el.classList.contains('hidden'));
+    isHidden = await page.$eval(".popover", (el) =>
+      el.classList.contains("hidden"),
+    );
     expect(isHidden).toBe(true);
   });
-  
 
   afterEach(async () => {
     await browser.close();
-    
-    
   });
 });
