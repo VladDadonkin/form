@@ -1,5 +1,4 @@
-
-name: forms
+name: form
 
 on:
   push:
@@ -27,12 +26,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.17.0
+          node-version: 20.12.0
           cache: 'yarn'
       - run: yarn
       - run: yarn lint
 
-
+  
 
   build:
     needs: [eslint]
@@ -47,7 +46,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.17.0
+          node-version: 20.11.0
           cache: 'yarn'
       - run: yarn
       - run: yarn build
