@@ -35,10 +35,10 @@ describe("Page start", () => {
 
     await page.waitForSelector(".popover");
 
-    isHidden = await page.$eval(".popover", (el) =>
+    const isNoHidden = await page.$eval(".popover", (el) =>
       el.classList.contains("hidden"),
     );
-    expect(isHidden).toBe(true);
+    expect(isNoHidden).toBe(true);
   });
 
   afterEach(async () => {
